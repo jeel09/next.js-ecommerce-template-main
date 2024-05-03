@@ -44,9 +44,9 @@ const ShoppingCart = ({ thumb, name, id, color, size, count, price }: ProductSto
     <tr>
       <td>
         <div className="cart-product">
-          {/* <div className="cart-product__img">
-            <img src={thumb} alt="" />
-          </div> */}
+          <div className="cart-product__img">
+            <img src={`data:image/jpeg;base64,${thumb}`} alt="" />
+          </div>
 
           <div className="cart-product__content">
             <h3>{name}</h3>

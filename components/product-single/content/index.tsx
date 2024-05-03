@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import productsColors from './../../../utils/data/products-colors';
 import productsSizes from './../../../utils/data/products-sizes';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,12 +42,13 @@ const Content = ({ product }: ProductContent) => {
     const productToSave: ProductStoreType = {
       id: product.id,
       name: product.name,
-      thumb: product.images ? product.images[0] : '',
+      thumb: product.images,
       price: product.currentPrice,
       count: count,
       color: getColorName(product.color),
       size: itemSize
     }
+    console.log("save",productToSave);
 
     if (!productToSave.size) {
       return alert('Please select a size');
@@ -62,7 +62,7 @@ const Content = ({ product }: ProductContent) => {
     dispatch(addProduct(productStore));
   }
 
-  const setProductCount = (count: number) => { 
+  const setProductCount = (count: number) => {
     if (count <= 0) {
       return;
     }

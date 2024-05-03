@@ -54,7 +54,7 @@ export type FetchedData = {
 export type ProductStoreType = {
   id: string;
   name: string;
-  thumb: string;
+  thumb: string[];
   price: number;
   count: number;
   color: string;
